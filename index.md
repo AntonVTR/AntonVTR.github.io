@@ -14,11 +14,14 @@ SW developer languages
  - C++ (esp8266)
 
 ---
+
 ### QA  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Pj59w3ujvJA?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
  - [Example automation test](https://github.com/AntonVTR/CatlulatorTest)
+
 ---
+
 ### Android apps & Google Play
 <img src="images/AndroidAppsGooglePay.jpg?raw=true"/>
 
