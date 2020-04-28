@@ -3,15 +3,11 @@ I can be the center of gravity and guide a team, but more I love to be a critica
 ---
 
 ## Skills 
-SW developer languages
- - Java
- - Kotlin
- - JS
- - Go
- - Pyhon
- - AI
- - PHP
- - C++ (esp8266)
+ - Git
+ - DB
+ - os NIX 
+ - Networks
+ and more...
 
 ---
 
@@ -19,6 +15,7 @@ SW developer languages
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Pj59w3ujvJA?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 
  - [Example automation test](https://github.com/AntonVTR/CatlulatorTest)
+ - Appium, Katalon Selenium
 
 ---
 
@@ -36,5 +33,13 @@ SW developer languages
 - [Морское ледовое велоралли](http://www.papenberg.ru/)
 - [ASIA COMPANY LIMITED](http://ogasiaco.com/)
 - [Рулонный газон Владивосток](http://ovoshevod-dv.ru/)
+
+---
+
+### Other  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UTAcd1VSCio?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+
+ - [Sail boat](https://lastromances.livejournal.com/)
+ - Arduino, esp, IOT 
 
 ---
