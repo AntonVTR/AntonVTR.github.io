@@ -1,5 +1,6 @@
 # Portfolio  
-I can be the center of gravity and guide a team, but more I love to be a critical thinking team member and helping to stay on the optimal way during the lifecycle of an app.
+I can be the center of gravity and guide a team, at the same time more I love to be a critical thinking team member helping the team to stay on the optimal way during the lifecycle of an app.
+
 ---
 
 ## Skills 
@@ -23,7 +24,7 @@ I can be the center of gravity and guide a team, but more I love to be a critica
 <img src="images/AndroidAppsGooglePay.jpg?raw=true"/>
 
  - +13 projects was pulished (cutterntly removed) 
- - 1 project took second place on Hackathon in 2015
+ - eFit project ranked second on Hackathon in 2015
 
 ### WebSites
 <img src="images/web_collage.gif?raw=true"/>
