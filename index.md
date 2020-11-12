@@ -24,7 +24,7 @@ I can be the center of gravity and guide a team, at the same time more I love to
 <img src="images/AndroidAppsGooglePay.jpg?raw=true"/>
 
  - +13 projects was pulished (cutterntly removed) 
- - eFit project ranked second on Hackathon in 2015
+ - eFit project ranked second on Hackathon in 2015 
 
 ### WebSites
 <img src="images/web_collage.gif?raw=true"/>
@@ -43,4 +43,8 @@ I can be the center of gravity and guide a team, at the same time more I love to
  - [Sail boat](https://lastromances.livejournal.com/)
  - Arduino, esp, IOT 
 
+### Achieve
+ - [1 ranked digital breakthrough](https://leadersofdigital.ru/event/63010/case/146318/results) 
+ - B2 EF SET Certificate 2019
+ - Winner icremantal innovation awards 2017
 ---
