@@ -45,6 +45,7 @@ I can be the center of gravity and guide a team, at the same time more I love to
 
 ### Achieve
  - [1 ranked digital breakthrough](https://leadersofdigital.ru/event/63010/case/146318/results) 
- - B2 EF SET Certificate 2019
- - Winner icremantal innovation awards 2017
+ - [B2 EF SET Certificate 2019](https://antonvtr.github.io/images/achieve/EF%20SET%20Certificate.pdf)
+ - [Winner icremantal innovation awards 2017](https://antonvtr.github.io/images/achieve/Certificate%20for%20Hackathon%20(Incremental%202%20A%20Rassolenko).pdf)
+
 ---
