@@ -1,4 +1,8 @@
 # Portfolio  
+QA (Automation/Manual)
+
+Setup release process, integrate tests and guarantee product quality, optimize life circle of the product. From zero to end, the result improves the working procedure and life quality. 
+
 I can be the center of gravity and guide a team, at the same time more I love to be a critical thinking team member helping the team to stay on the optimal way during the lifecycle of an app.
 
 ---
