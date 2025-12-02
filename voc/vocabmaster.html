@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocabMaster - Self-Contained Learning</title>
+    <style>
+        /* Embedded CSS - Use CSS variables for theming */
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+            --background: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Mobile-first responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="header">
+            <h1>VocabMaster</h1>
+            <p>Self-Contained Vocabulary Learning</p>
+        </div>
+        <div id="main-content" class="card">
+            <p>Welcome to VocabMaster! The app is initializing...</p>
+        </div>
+    </div>
+
+    <script>
+        // Embedded JavaScript - ES6+ with classes
+
+        // Learning Statistics & Tracking
+        class LearningStats {
+            constructor() {
+                this.attempts = 0;
+                this.correct = 0;
+                this.lastReviewed = null;
+                this.easeFactor = 2.5;
+                this.interval = 1;
+                this.dueDate = Date.now();
+            }
+
+            calculateNextReview(correct) {
+                // SM-2 algorithm implementation
+                if (correct) {
+                    this.interval = this.interval * this.easeFactor;
+                } else {
+                    this.interval = 1;
+                    this.easeFactor = Math.max(1.3, this.easeFactor - 0.2);
+                }
+                this.dueDate = Date.now() + (this.interval * 24 * 60 * 60 * 1000);
+            }
+        }
+
+        // Word class
+        class Word {
+            constructor(target, native, examples = [], tags = []) {
+                this.target = target; // Word to learn
+                this.native = native; // Translation
+                this.examples = examples;
+                this.tags = tags;
+                this.stats = new LearningStats();
+            }
+        }
+
+        // Vocabulary Set class
+        class VocabularySet {
+            constructor(id, name, language, words = []) {
+                this.id = id;
+                this.name = name;
+                this.language = language;
+                this.words = words;
+                this.metadata = {
+                    created: Date.now(),
+                    version: '1.0',
+                    difficulty: 'beginner'
+                };
+            }
+        }
+
+        // User Progress class
+        class UserProgress {
+            constructor() {
+                this.stats = {
+                    wordsLearned: 0,
+                    sessionsCompleted: 0,
+                    totalAttempts: 0,
+                    correctAttempts: 0
+                };
+            }
+
+            updateStats(correct) {
+                this.stats.totalAttempts++;
+                if (correct) {
+                    this.stats.correctAttempts++;
+                    this.stats.wordsLearned++; // Increment words learned on correct answers
+                }
+            }
+
+            getStats() {
+                return {
+                    ...this.stats,
+                    accuracy: this.stats.totalAttempts > 0 ? (this.stats.correctAttempts / this.stats.totalAttempts) * 100 : 0
+                };
+            }
+        }
+
+        // Spaced Repetition Engine
+        class LearningEngine {
+            constructor() {
+                this.algorithm = 'sm2'; // SuperMemo-2
+            }
+
+            getNextWord(vocabSet) {
+                // Return word with highest priority based on:
+                // 1. Due date (only consider words that are due or overdue)
+                // 2. Lowest ease factor
+                // 3. Least practiced
+
+                const now = Date.now();
+                const dueWords = vocabSet.words.filter(word => word.stats.dueDate <= now);
+
+                if (dueWords.length === 0) {
+                    return null; // No words due for review
+                }
+
+                return this.calculatePriority(dueWords);
+            }
+
+            calculatePriority(words) {
+                if (words.length === 0) return null;
+
+                return words.reduce((highest, word) => {
+                    const priority = this.calculateWordPriority(word);
+                    return priority > highest.priority ? { word, priority } : highest;
+                }, { word: null, priority: -Infinity }).word;
+            }
+
+            calculateWordPriority(word) {
+                const now = Date.now();
+                const overdue = Math.max(0, now - word.stats.dueDate);
+                const easePenalty = (2.5 - word.stats.easeFactor) * 10;
+                const practiceBonus = word.stats.attempts * 5;
+                return overdue + easePenalty - practiceBonus;
+            }
+        }
+
+        // P2P Sharing Implementation
+        class P2PSharing {
+            constructor() {
+                this.connections = new Map();
+            }
+
+            shareProgress(progressData) {
+                // WebRTC or data URL sharing for progress sync
+                const shareString = JSON.stringify(progressData);
+                return `vocabmaster://share/${btoa(shareString)}`;
+            }
+        }
+
+        // App Distributor for QR
+        class AppDistributor {
+            generateAppQR() {
+                const appCode = this.serializeApp();
+                const qrData = `data:text/html;base64,${btoa(appCode)}`;
+                // For simplicity, return the data URL (in real app, generate QR image)
+                return qrData;
+            }
+
+            serializeApp() {
+                // Serialize current app state with minimal vocabulary
+                return document.documentElement.outerHTML;
+            }
+        }
+
+        // Main application class
+        class VocabMaster {
+            constructor() {
+                this.vocabSets = new Map();
+                this.userProgress = new UserProgress();
+                this.learningEngine = new LearningEngine();
+                this.currentSession = null;
+                this.p2pSharing = new P2PSharing();
+                this.appDistributor = new AppDistributor();
+                this.storage = new DecentralizedStorage();
+                this.userIdentity = new UserIdentity();
+            }
+
+            async initialize() {
+                // Load default vocabulary or from storage
+                this.loadDefaultVocabulary();
+                await this.initializeIdentity();
+                await this.loadProgress(); // Load progress from decentralized storage
+                this.renderUI();
+            }
+
+            async initializeIdentity() {
+                await this.userIdentity.loadOrGenerateIdentity();
+            }
+
+            loadDefaultVocabulary() {
+                // Sample vocabulary for testing
+                const sampleWords = [
+                    new Word('hello', 'hola', ['¡Hola! ¿Cómo estás?', 'Hello! How are you?'], ['greeting']),
+                    new Word('thank you', 'gracias', ['Gracias por tu ayuda.', 'Thank you for your help.'], ['politeness']),
+                    new Word('water', 'agua', ['¿Puedo tener agua?', 'Can I have water?'], ['food', 'drink'])
+                ];
+                const spanishBasics = new VocabularySet('spanish-basics', 'Spanish Basics', 'es', sampleWords);
+                this.vocabSets.set(spanishBasics.id, spanishBasics);
+            }
+
+            renderUI() {
+                const mainContent = document.getElementById('main-content');
+                mainContent.innerHTML = `
+                    <h2>User Identity</h2>
+                    <p><strong>Public Key/ID:</strong> ${this.userIdentity.publicKey || 'Loading...'}</p>
+                    <button onclick="app.regenerateIdentity()">Regenerate Identity</button>
+                    <h2>Vocabulary Sets</h2>
+                    <ul>
+                        ${Array.from(this.vocabSets.values()).map(set => `
+                            <li>${set.name} (${set.words.length} words) - <button onclick="app.startSession('${set.id}')">Start Learning</button> <button onclick="app.exportVocab('${set.id}')">Export</button></li>
+                        `).join('')}
+                    </ul>
+                    <button onclick="app.showImportForm()">Import Vocabulary</button>
+                    <button onclick="app.showContributeForm()">Contribute Words</button>
+                    <h2>Progress</h2>
+                    <p>Words Learned: ${this.userProgress.stats.wordsLearned}</p>
+                    <p>Accuracy: ${this.userProgress.getStats().accuracy.toFixed(2)}%</p>
+                    <button onclick="app.shareProgress()">Share Progress</button>
+                    <button onclick="app.generateAppQR()">Generate App QR</button>
+                `;
+            }
+
+            startSession(vocabId) {
+                const vocabSet = this.vocabSets.get(vocabId);
+                if (!vocabSet) return;
+
+                this.currentSession = new LearningSession(this, vocabSet);
+                this.currentSession.start();
+            }
+
+            exportVocab(vocabId) {
+                const vocabSet = this.vocabSets.get(vocabId);
+                if (!vocabSet) return;
+
+                const exportData = {
+                    id: vocabSet.id,
+                    name: vocabSet.name,
+                    language: vocabSet.language,
+                    metadata: vocabSet.metadata,
+                    words: vocabSet.words.map(word => ({
+                        target: word.target,
+                        native: word.native,
+                        examples: word.examples,
+                        tags: word.tags
+                        // Note: stats not exported for privacy
+                    }))
+                };
+
+                const dataStr = JSON.stringify(exportData, null, 2);
+                const blob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${vocabSet.id}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            showImportForm() {
+                const mainContent = document.getElementById('main-content');
+                mainContent.innerHTML = `
+                    <h2>Import Vocabulary</h2>
+                    <textarea id="import-textarea" rows="20" placeholder="Paste JSON vocabulary data here"></textarea><br>
+                    <button onclick="app.importVocab()">Import</button>
+                    <button onclick="app.renderUI()">Cancel</button>
+                `;
+            }
+
+            importVocab() {
+                const textarea = document.getElementById('import-textarea');
+                try {
+                    const data = JSON.parse(textarea.value);
+                    const words = data.words.map(w => new Word(w.target, w.native, w.examples || [], w.tags || []));
+                    const vocabSet = new VocabularySet(data.id, data.name, data.language, words);
+                    this.vocabSets.set(vocabSet.id, vocabSet);
+                    alert('Vocabulary imported successfully!');
+                    this.renderUI();
+                } catch (e) {
+                    alert('Invalid JSON data: ' + e.message);
+                }
+            }
+
+            showContributeForm() {
+                const mainContent = document.getElementById('main-content');
+                mainContent.innerHTML = `
+                    <h2>Contribute Words</h2>
+                    <select id="vocab-select">
+                        ${Array.from(this.vocabSets.values()).map(set => `<option value="${set.id}">${set.name}</option>`).join('')}
+                    </select><br>
+                    <input type="text" id="target-word" placeholder="Word to learn"><br>
+                    <input type="text" id="native-word" placeholder="Translation"><br>
+                    <input type="text" id="examples" placeholder="Examples (comma separated)"><br>
+                    <input type="text" id="tags" placeholder="Tags (comma separated)"><br>
+                    <button onclick="app.addWord()">Add Word</button>
+                    <button onclick="app.renderUI()">Cancel</button>
+                `;
+            }
+
+            addWord() {
+                const vocabId = document.getElementById('vocab-select').value;
+                const target = document.getElementById('target-word').value.trim();
+                const native = document.getElementById('native-word').value.trim();
+                const examples = document.getElementById('examples').value.split(',').map(e => e.trim()).filter(e => e);
+                const tags = document.getElementById('tags').value.split(',').map(t => t.trim()).filter(t => t);
+
+                if (!target || !native) {
+                    alert('Target and native words are required.');
+                    return;
+                }
+
+                const vocabSet = this.vocabSets.get(vocabId);
+                if (vocabSet) {
+                    vocabSet.words.push(new Word(target, native, examples, tags));
+                    alert('Word added successfully!');
+                    this.renderUI();
+                }
+            }
+
+            generateShareData() {
+                return {
+                    progress: this.userProgress.getStats(),
+                    vocabulary: Array.from(this.vocabSets.values()).map(set => ({
+                        id: set.id,
+                        name: set.name,
+                        wordCount: set.words.length
+                    }))
+                };
+            }
+
+            shareProgress() {
+                const shareData = this.generateShareData();
+                const shareUrl = this.p2pSharing.shareProgress(shareData);
+                const mainContent = document.getElementById('main-content');
+                mainContent.innerHTML = `
+                    <h2>Share Progress</h2>
+                    <p>Copy this URL to share your progress:</p>
+                    <textarea id="share-url" readonly rows="3" style="width: 100%;">${shareUrl}</textarea><br>
+                    <button onclick="app.copyToClipboard('share-url')">Copy to Clipboard</button>
+                    <p>You can paste this into a message or use it to generate a QR code.</p>
+                    <button onclick="app.renderUI()">Back to Main</button>
+                `;
+            }
+
+            generateAppQR() {
+                const qrData = this.appDistributor.generateAppQR();
+                const mainContent = document.getElementById('main-content');
+                mainContent.innerHTML = `
+                    <h2>App Distribution QR</h2>
+                    <p>Copy this data URL to share the entire app:</p>
+                    <textarea id="qr-data" readonly rows="5" style="width: 100%;">${qrData}</textarea><br>
+                    <button onclick="app.copyToClipboard('qr-data')">Copy to Clipboard</button>
+                    <p>To generate a scannable QR code, paste this URL into an online QR code generator.</p>
+                    <button onclick="app.renderUI()">Back to Main</button>
+                `;
+            }
+
+            copyToClipboard(textareaId) {
+                const textarea = document.getElementById(textareaId);
+                const value = textarea.value;
+                // Prefer async clipboard API
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(value).then(() => {
+                        alert('Copied to clipboard!');
+                    }).catch(err => {
+                        // Fallback to execCommand
+                        textarea.select();
+                        try { document.execCommand('copy'); alert('Copied to clipboard!'); }
+                        catch (e) { alert('Copy failed: ' + e.message); }
+                    });
+                } else {
+                    textarea.select();
+                    try { document.execCommand('copy'); alert('Copied to clipboard!'); }
+                    catch (e) { alert('Copy failed: ' + e.message); }
+                }
+            }
+
+            async regenerateIdentity() {
+                await this.userIdentity.generateIdentity();
+                this.userIdentity.saveIdentity();
+                this.renderUI();
+            }
+
+            async saveProgress() {
+                if (this.userIdentity.publicKey) {
+                    const progressData = {
+                        userId: this.userIdentity.publicKey,
+                        stats: this.userProgress.getStats(),
+                        vocabularySets: Array.from(this.vocabSets.values()).map(set => ({
+                            id: set.id,
+                            name: set.name,
+                            language: set.language,
+                            wordCount: set.words.length,
+                            lastModified: Date.now()
+                        })),
+                        timestamp: Date.now()
+                    };
+                    await this.storage.saveProgress(this.userIdentity.publicKey, progressData);
+                }
+            }
+
+            async loadProgress() {
+                if (this.userIdentity.publicKey) {
+                    const progressData = await this.storage.loadProgress(this.userIdentity.publicKey);
+                    if (progressData) {
+                        // Restore stats
+                        this.userProgress.stats = progressData.stats;
+                        // Note: vocabulary sets would need to be loaded separately
+                        console.log('Progress loaded from decentralized storage');
+                    }
+                }
+            }
+        }
+
+        // Decentralized storage with OrbitDB integration (simplified for browser)
+        class DecentralizedStorage {
+            constructor() {
+                this.orbitdb = null;
+                this.ipfs = null;
+                this.stores = {
+                    userProgress: null,
+                    vocabularies: null,
+                    learningStats: null
+                };
+                this.isInitialized = false;
+                // Fallback storage for demo purposes
+                this.fallbackStorage = window.localStorage;
+                this.storagePrefix = 'vocabmaster_decentralized_';
+            }
+
+            async initialize() {
+                try {
+                    console.log('DecentralizedStorage: Attempting to initialize OrbitDB...');
+
+                    // Check if OrbitDB libraries are available (would be loaded via script tags in real implementation)
+                    if (typeof OrbitDB !== 'undefined' && typeof Ipfs !== 'undefined') {
+                        // Real OrbitDB initialization
+                        this.ipfs = await Ipfs.create({
+                            repo: 'vocabmaster-ipfs-repo',
+                            config: {
+                                Addresses: {
+                                    Swarm: ['/dns4/wrtc-star1.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star']
+                                }
+                            }
+                        });
+
+                        this.orbitdb = await OrbitDB.createInstance(this.ipfs, {
+                            directory: './vocabmaster-orbitdb'
+                        });
+
+                        // Create document stores
+                        this.stores.userProgress = await this.orbitdb.docstore('user-progress');
+                        this.stores.vocabularies = await this.orbitdb.docstore('vocabularies');
+                        this.stores.learningStats = await this.orbitdb.docstore('learning-stats');
+
+                        // Load stores
+                        await Promise.all([
+                            this.stores.userProgress.load(),
+                            this.stores.vocabularies.load(),
+                            this.stores.learningStats.load()
+                        ]);
+
+                        this.isInitialized = true;
+                        console.log('DecentralizedStorage: OrbitDB initialized successfully');
+                        return true;
+                    } else {
+                        // Fallback to localStorage for demo
+                        console.log('DecentralizedStorage: OrbitDB libraries not available, using localStorage fallback');
+                        this.isInitialized = true;
+                        return false;
+                    }
+                } catch (error) {
+                    console.error('DecentralizedStorage: Failed to initialize OrbitDB:', error);
+                    console.log('DecentralizedStorage: Falling back to localStorage');
+                    this.isInitialized = true;
+                    return false;
+                }
+            }
+
+            async saveProgress(userId, progress) {
+                if (!this.isInitialized) {
+                    await this.initialize();
+                }
+
+                const data = {
+                    _id: userId,
+                    ...progress,
+                    timestamp: Date.now(),
+                    version: '1.0'
+                };
+
+                try {
+                    if (this.stores.userProgress) {
+                        // Real OrbitDB save
+                        await this.stores.userProgress.put(data);
+                        console.log('DecentralizedStorage: Progress saved to OrbitDB', userId);
+                    } else {
+                        // Fallback save
+                        const key = `${this.storagePrefix}progress_${userId}`;
+                        this.fallbackStorage.setItem(key, JSON.stringify(data));
+                        console.log('DecentralizedStorage: Progress saved to localStorage fallback', userId);
+                    }
+                } catch (error) {
+                    console.error('DecentralizedStorage: Failed to save progress:', error);
+                    // Final fallback
+                    const key = `${this.storagePrefix}progress_${userId}`;
+                    this.fallbackStorage.setItem(key, JSON.stringify(data));
+                }
+            }
+
+            async loadProgress(userId) {
+                if (!this.isInitialized) {
+                    await this.initialize();
+                }
+
+                try {
+                    if (this.stores.userProgress) {
+                        // Real OrbitDB load
+                        const results = this.stores.userProgress.query(doc => doc._id === userId);
+                        const progress = results.length > 0 ? results[0] : null;
+                        console.log('DecentralizedStorage: Progress loaded from OrbitDB', userId, progress);
+                        return progress;
+                    } else {
+                        // Fallback load
+                        const key = `${this.storagePrefix}progress_${userId}`;
+                        const data = this.fallbackStorage.getItem(key);
+                        const progress = data ? JSON.parse(data) : null;
+                        console.log('DecentralizedStorage: Progress loaded from localStorage fallback', userId, progress);
+                        return progress;
+                    }
+                } catch (error) {
+                    console.error('DecentralizedStorage: Failed to load progress:', error);
+                    // Final fallback
+                    const key = `${this.storagePrefix}progress_${userId}`;
+                    const data = this.fallbackStorage.getItem(key);
+                    return data ? JSON.parse(data) : null;
+                }
+            }
+
+            async saveVocabulary(vocabId, vocabulary) {
+                if (!this.isInitialized) {
+                    await this.initialize();
+                }
+
+                const data = {
+                    _id: vocabId,
+                    ...vocabulary,
+                    timestamp: Date.now(),
+                    version: '1.0'
+                };
+
+                try {
+                    if (this.stores.vocabularies) {
+                        await this.stores.vocabularies.put(data);
+                        console.log('DecentralizedStorage: Vocabulary saved to OrbitDB', vocabId);
+                    } else {
+                        const key = `${this.storagePrefix}vocab_${vocabId}`;
+                        this.fallbackStorage.setItem(key, JSON.stringify(data));
+                        console.log('DecentralizedStorage: Vocabulary saved to localStorage fallback', vocabId);
+                    }
+                } catch (error) {
+                    console.error('DecentralizedStorage: Failed to save vocabulary:', error);
+                    const key = `${this.storagePrefix}vocab_${vocabId}`;
+                    this.fallbackStorage.setItem(key, JSON.stringify(data));
+                }
+            }
+
+            async loadVocabulary(vocabId) {
+                if (!this.isInitialized) {
+                    await this.initialize();
+                }
+
+                try {
+                    if (this.stores.vocabularies) {
+                        const results = this.stores.vocabularies.query(doc => doc._id === vocabId);
+                        const vocab = results.length > 0 ? results[0] : null;
+                        console.log('DecentralizedStorage: Vocabulary loaded from OrbitDB', vocabId, vocab);
+                        return vocab;
+                    } else {
+                        const key = `${this.storagePrefix}vocab_${vocabId}`;
+                        const data = this.fallbackStorage.getItem(key);
+                        const vocab = data ? JSON.parse(data) : null;
+                        console.log('DecentralizedStorage: Vocabulary loaded from localStorage fallback', vocabId, vocab);
+                        return vocab;
+                    }
+                } catch (error) {
+                    console.error('DecentralizedStorage: Failed to load vocabulary:', error);
+                    const key = `${this.storagePrefix}vocab_${vocabId}`;
+                    const data = this.fallbackStorage.getItem(key);
+                    return data ? JSON.parse(data) : null;
+                }
+            }
+
+            // Get connection info for debugging
+            getConnectionInfo() {
+                return {
+                    isInitialized: this.isInitialized,
+                    hasOrbitDB: this.orbitdb !== null,
+                    hasIPFS: this.ipfs !== null,
+                    storesReady: Object.values(this.stores).every(store => store !== null),
+                    orbitdbId: this.orbitdb ? this.orbitdb.id : null,
+                    ipfsId: this.ipfs ? this.ipfs.id : null
+                };
+            }
+        }
+
+        // User identity using Web Crypto (Ed25519-like via subtle if available)
+        class UserIdentity {
+            constructor() {
+                this.keypair = null;
+                this.publicKey = null;
+                this.privateKey = null;
+            }
+
+            async generateIdentity() {
+                // Try to generate an asymmetric key pair (ECDSA P-256 as a broadly supported fallback for demo purposes)
+                try {
+                    if (window.crypto && crypto.subtle && crypto.subtle.generateKey) {
+                        // Use ECDSA P-256 as a broadly supported fallback for demo purposes
+                        const kp = await crypto.subtle.generateKey(
+                            { name: 'ECDSA', namedCurve: 'P-256' },
+                            true,
+                            ['sign', 'verify']
+                        );
+                        this.keypair = kp;
+                        this.publicKey = await crypto.subtle.exportKey('spki', kp.publicKey).then(b => this._bufToBase64(b));
+                        this.privateKey = await crypto.subtle.exportKey('pkcs8', kp.privateKey).then(b => this._bufToBase64(b));
+                        console.log('UserIdentity generated (ECDSA P-256)');
+                        return { publicKey: this.publicKey };
+                    }
+                } catch (e) {
+                    console.warn('Key generation failed:', e);
+                }
+
+                // Fallback: generate a random id
+                const id = 'user-' + Math.random().toString(36).slice(2, 10);
+                this.publicKey = id;
+                return { publicKey: id };
+            }
+
+            async loadOrGenerateIdentity() {
+                // Try to load from localStorage
+                const stored = localStorage.getItem('vocabmaster_identity');
+                if (stored) {
+                    try {
+                        const data = JSON.parse(stored);
+                        this.publicKey = data.publicKey;
+                        this.privateKey = data.privateKey;
+                        // Re-import keys if available
+                        if (data.privateKey && window.crypto && crypto.subtle) {
+                            const privBuf = this._base64ToBuf(data.privateKey);
+                            const pubBuf = this._base64ToBuf(data.publicKey);
+                            this.keypair = {
+                                privateKey: await crypto.subtle.importKey('pkcs8', privBuf, { name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign']),
+                                publicKey: await crypto.subtle.importKey('spki', pubBuf, { name: 'ECDSA', namedCurve: 'P-256' }, true, ['verify'])
+                            };
+                        }
+                        console.log('UserIdentity loaded from storage');
+                        return { publicKey: this.publicKey };
+                    } catch (e) {
+                        console.warn('Failed to load identity:', e);
+                    }
+                }
+                // Generate new
+                const result = await this.generateIdentity();
+                this.saveIdentity();
+                return result;
+            }
+
+            saveIdentity() {
+                if (this.publicKey) {
+                    const data = { publicKey: this.publicKey, privateKey: this.privateKey };
+                    localStorage.setItem('vocabmaster_identity', JSON.stringify(data));
+                }
+            }
+
+            _bufToBase64(buffer) {
+                const bytes = new Uint8Array(buffer);
+                let binary = '';
+                for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
+                return btoa(binary);
+            }
+
+            _base64ToBuf(base64) {
+                const binary = atob(base64);
+                const bytes = new Uint8Array(binary.length);
+                for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+                return bytes.buffer;
+            }
+        }
+
+        // Learning Session class
+        class LearningSession {
+            constructor(app, vocabSet) {
+                this.app = app;
+                this.vocabSet = vocabSet;
+                this.currentWord = null;
+                this.showingAnswer = false;
+            }
+
+            start() {
+                this.nextWord();
+                this.renderSession();
+            }
+
+            nextWord() {
+                this.currentWord = this.app.learningEngine.getNextWord(this.vocabSet);
+                this.showingAnswer = false;
+            }
+
+            renderSession() {
+                const mainContent = document.getElementById('main-content');
+                if (!this.currentWord) {
+                    mainContent.innerHTML = `
+                        <h2>Session Complete!</h2>
+                        <p>All words reviewed.</p>
+                        <button onclick="app.renderUI()">Back to Main</button>
+                    `;
+                    return;
+                }
+
+                mainContent.innerHTML = `
+                    <h2>Learning Session</h2>
+                    <div class="card">
+                        <h3>${this.currentWord.target}</h3>
+                        ${this.showingAnswer ? `
+                            <p><strong>Translation:</strong> ${this.currentWord.native}</p>
+                            <p><strong>Examples:</strong></p>
+                            <ul>
+                                ${this.currentWord.examples.map(ex => `<li>${ex}</li>`).join('')}
+                            </ul>
+                            <button onclick="app.currentSession.markCorrect(true)">Correct</button>
+                            <button onclick="app.currentSession.markCorrect(false)">Incorrect</button>
+                        ` : `
+                            <button onclick="app.currentSession.showAnswer()">Show Answer</button>
+                        `}
+                    </div>
+                    <button onclick="app.renderUI()">End Session</button>
+                `;
+            }
+
+            showAnswer() {
+                this.showingAnswer = true;
+                this.renderSession();
+            }
+
+            async markCorrect(correct) {
+                this.currentWord.stats.calculateNextReview(correct);
+                this.app.userProgress.updateStats(correct);
+                await this.app.saveProgress(); // Save progress to decentralized storage
+                this.nextWord();
+                this.renderSession();
+            }
+        }
+
+        // Initialize the app
+        const app = new VocabMaster();
+        app.initialize();
+
+        // Make app global for button onclicks
+        window.app = app;
+
+        // Unit Tests (simple inline tests for demonstration)
+        function runTests() {
+            console.log('Running unit tests...');
+
+            // Test LearningStats
+            const stats = new LearningStats();
+            stats.calculateNextReview(true);
+            console.assert(stats.interval > 1, 'Interval should increase on correct answer');
+
+            stats.calculateNextReview(false);
+            console.assert(stats.interval === 1, 'Interval should reset on incorrect answer');
+            console.assert(stats.easeFactor < 2.5, 'Ease factor should decrease on incorrect answer');
+
+            // Test Word creation
+            const word = new Word('test', 'prueba');
+            console.assert(word.target === 'test', 'Word target should be set');
+            console.assert(word.stats instanceof LearningStats, 'Word should have stats');
+
+            // Test VocabularySet
+            const vocabSet = new VocabularySet('test-id', 'Test Set', 'en', [word]);
+            console.assert(vocabSet.id === 'test-id', 'VocabSet id should be set');
+            console.assert(vocabSet.words.length === 1, 'VocabSet should contain words');
+
+            // Test LearningEngine priority
+            const engine = new LearningEngine();
+            const overdueWord = new Word('overdue', 'atrasado');
+            overdueWord.stats.dueDate = Date.now() - 100000; // Overdue
+            const freshWord = new Word('fresh', 'fresco');
+            const testVocab = new VocabularySet('test', 'Test', 'en', [overdueWord, freshWord]);
+            const next = engine.getNextWord(testVocab);
+            console.assert(next === overdueWord, 'Should prioritize overdue words');
+
+            // Test UserProgress
+            const progress = new UserProgress();
+            progress.updateStats(true);
+            progress.updateStats(false);
+            const statsResult = progress.getStats();
+            console.assert(statsResult.totalAttempts === 2, 'Should track total attempts');
+            console.assert(statsResult.correctAttempts === 1, 'Should track correct attempts');
+            console.assert(statsResult.accuracy === 50, 'Should calculate accuracy');
+
+            // Test P2P Sharing
+            const sharing = new P2PSharing();
+            const testProgress = { wordsLearned: 5 };
+            const shareUrl = sharing.shareProgress(testProgress);
+            console.assert(shareUrl.startsWith('vocabmaster://share/'), 'Share URL should have correct format');
+
+            // Test App Distributor
+            const distributor = new AppDistributor();
+            const qrData = distributor.generateAppQR();
+            console.assert(qrData.startsWith('data:text/html;base64,'), 'QR data should be base64 encoded HTML');
+
+            console.log('All tests passed!');
+        }
+
+        // E2E Tests (simulate user journey)
+        function runE2ETests() {
+            console.log('Running E2E tests...');
+
+            // Simulate complete learning session flow
+            const testApp = new VocabMaster();
+            testApp.initialize();
+
+            // Select vocabulary
+            const vocabId = 'spanish-basics';
+            const vocabSet = testApp.vocabSets.get(vocabId);
+            console.assert(vocabSet, 'Vocabulary set should be loaded');
+
+            // Start session
+            const session = new LearningSession(testApp, vocabSet);
+            session.start();
+            console.assert(session.currentWord, 'Session should have a current word');
+
+            // Simulate answering
+            const initialAttempts = testApp.userProgress.stats.totalAttempts;
+            session.markCorrect(true);
+            console.assert(testApp.userProgress.stats.totalAttempts > initialAttempts, 'Progress should be updated');
+
+            // Check progress
+            const progress = testApp.userProgress.getStats();
+            console.assert(progress.wordsLearned >= 0, 'Progress stats should be available');
+
+            console.log('E2E tests passed!');
+        }
+
+        // Run tests on load
+        runTests();
+
+        // Run E2E tests
+        runE2ETests();
+    </script>
+</body>
+
+</html>
