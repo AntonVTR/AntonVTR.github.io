@@ -285,8 +285,53 @@ class VocabMaster {
      */
     googleTranslateAnchor(text, src = 'auto', tl = 'en', label = '🔊') {
         const url = this.googleTranslateUrl(text, src, tl);
-        // small accessible link that opens in a new tab
-        return `<a class="gt-link" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="Open in Google Translate">${label}</a>`;
+        // Use an onclick handler that will try to open the native app on mobile
+        // and fall back to the web URL. Keep the href present so non-JS or
+        // middle-click still work.
+        return `<a class="gt-link" href="${url}" onclick="app.openInGoogleTranslate(${JSON.stringify(text)}, ${JSON.stringify(src)}, ${JSON.stringify(tl)}); return false;" target="_blank" rel="noopener noreferrer" aria-label="Open in Google Translate">${label}</a>`;
+    }
+
+    /**
+     * Try to open the Google Translate native app on mobile devices and
+     * fall back to the web translate page when the app isn't available.
+     * - Android: uses the `intent:` URI with a browser_fallback_url to open the
+     *   `com.google.android.apps.translate` package when possible.
+     * - iOS: attempts a custom scheme then falls back to the web URL.
+     * Note: behavior varies by browser and OS; this attempts a best-effort approach.
+     */
+    openInGoogleTranslate(text, src = 'auto', tl = 'en') {
+        try {
+            const webUrl = this.googleTranslateUrl(text, src, tl);
+            const ua = navigator.userAgent || '';
+            const encWeb = encodeURIComponent(webUrl);
+
+            // Android (Chrome supports intent: URIs)
+            if (/Android/i.test(ua)) {
+                const intentUrl = `intent://translate.google.com/translate?sl=${encodeURIComponent(src)}&tl=${encodeURIComponent(tl)}&text=${encodeURIComponent(text)}#Intent;package=com.google.android.apps.translate;scheme=https;S.browser_fallback_url=${encWeb};end`;
+                // A user gesture triggered this call (onclick), so navigate to intent URI
+                window.location.href = intentUrl;
+                return;
+            }
+
+            // iOS (try opening app via scheme then fallback) — scheme support may vary
+            if (/iPhone|iPad|iPod/i.test(ua)) {
+                const iosScheme = `googletranslate://translate?sl=${encodeURIComponent(src)}&tl=${encodeURIComponent(tl)}&text=${encodeURIComponent(text)}`;
+                const now = Date.now();
+                // Attempt to open scheme; if it fails, after timeout open the web URL
+                window.location.href = iosScheme;
+                setTimeout(() => {
+                    // If still on page, assume scheme failed and open web URL
+                    if (Date.now() - now < 2000) window.location.href = webUrl;
+                }, 1200);
+                return;
+            }
+
+            // Default: open web URL in new tab
+            window.open(webUrl, '_blank');
+        } catch (e) {
+            // Fallback if anything goes wrong
+            try { window.open(this.googleTranslateUrl(text, src, tl), '_blank'); } catch (err) { /* ignore */ }
+        }
     }
 
     async initialize() {
