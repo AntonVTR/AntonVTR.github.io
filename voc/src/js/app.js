@@ -130,7 +130,7 @@ class LearningSession {
         mainContent.innerHTML = `
             <h2>Learning Session</h2>
             <div class="card">
-                <h3>${this.currentWord.target}</h3>
+                <h3>${this.currentWord.target} <span class="gt-anchor-wrapper" style="margin-left:8px;">${this.app.googleTranslateAnchor(this.currentWord.target, this.vocabSet.language || 'auto')}</span></h3>
                 ${this.currentWord.transliteration ? `<p class="transliteration">${this.currentWord.transliteration}</p>` : ''}
                 ${this.currentWord.image ? `<div class="word-image"><img src="${this.currentWord.image}" alt="${this.currentWord.target}" style="max-width:200px;max-height:200px;"/></div>` : ''}
                 ${this.showingAnswer ? `
@@ -263,6 +263,30 @@ class VocabMaster {
         } catch (e) {
             console.warn('showToast failed', e);
         }
+    }
+
+    /**
+     * Build a Google Translate URL for the provided text.
+     * Opens the translate page where users can play pronunciation audio.
+     * `src` is the source language code (use 'auto' to detect).
+     */
+    googleTranslateUrl(text, src = 'auto', tl = 'en') {
+        try {
+            const qs = `?sl=${encodeURIComponent(src)}&tl=${encodeURIComponent(tl)}&text=${encodeURIComponent(text)}&op=translate`;
+            return `https://translate.google.com/${qs}`;
+        } catch (e) {
+            return `https://translate.google.com/`;
+        }
+    }
+
+    /**
+     * Return an HTML anchor string that opens Google Translate for `text`.
+     * Use this in templates next to displayed words to allow pronunciation.
+     */
+    googleTranslateAnchor(text, src = 'auto', tl = 'en', label = '🔊') {
+        const url = this.googleTranslateUrl(text, src, tl);
+        // small accessible link that opens in a new tab
+        return `<a class="gt-link" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="Open in Google Translate">${label}</a>`;
     }
 
     async initialize() {
@@ -453,6 +477,26 @@ class VocabMaster {
 
     renderUI() {
         const mainContent = document.getElementById('main-content');
+        // Update header area (site title/tagline and user controls) instead of injecting header HTML
+        try {
+            const header = document.getElementById('site-header');
+            if (header) {
+                const titleEl = document.getElementById('site-title');
+                const tagEl = document.getElementById('site-tagline');
+                if (titleEl) titleEl.textContent = 'VocabMaster';
+                if (tagEl) tagEl.textContent = 'Self-Contained Vocabulary Learning';
+
+                // user controls (copy user id) - do not include Reset button
+                let userControls = document.getElementById('user-controls');
+                if (!userControls) {
+                    userControls = document.createElement('p');
+                    userControls.id = 'user-controls';
+                    userControls.className = 'muted';
+                    header.appendChild(userControls);
+                }
+                userControls.innerHTML = `User ID: <code id="user-id">${this.userId}</code> <button onclick="app.copyUserIdToClipboard()">Copy</button>`;
+            }
+        } catch (e) { /* ignore header update errors */ }
         // Clean, modernized UI: show distributor link, current vocab, and quick switcher for other dicts
         const currentSet = this.vocabSets.get(this.currentlyLoadedPath ? (this.vocabSets.has(this.currentlyLoadedPath) ? this.currentlyLoadedPath : Array.from(this.vocabSets.keys())[0]) : Array.from(this.vocabSets.keys())[0]);
         const vocabListHtml = this.vocabManifest && this.vocabManifest.sets ? this.vocabManifest.sets.map(p => {
@@ -504,10 +548,6 @@ class VocabMaster {
         }).join('') : '';
 
         mainContent.innerHTML = `
-            <div class="card header">
-                <h1>VocabMaster</h1>
-                <p class="muted">User ID: <code id="user-id">${this.userId}</code> <button onclick="app.copyUserIdToClipboard()">Copy</button> <button onclick="app.showResetConfirmation()">Reset Progress</button></p>
-            </div>
             <div class="card">
                 <h2>Current Dictionary</h2>
                 ${this.currentlyLoadedPath && this.vocabSets.size ? `<p><strong>${this.vocabSets.get(this.currentlyLoadedPath).name}</strong> — ${this.vocabSets.get(this.currentlyLoadedPath).words.length} words</p>` : `<p>No dictionary loaded.</p>`}
@@ -520,7 +560,6 @@ class VocabMaster {
                 </ul>
             </div>
             <div class="card">
-                <button class="reset-progress-inline" onclick="app.showResetConfirmation()">Reset Progress</button>
                 <h2>Progress</h2>
                 <p>Words Learned: ${(() => {
                     // If we have per-vocab progress recorded, sum those values for display.
@@ -603,85 +642,8 @@ class VocabMaster {
      * The dialog is appended to document.body and removed after action.
      */
     showResetConfirmation() {
-        try {
-            // If a modal already exists, don't create a second
-            if (document.getElementById('vocabmaster-reset-modal')) return;
-
-            const overlay = document.createElement('div');
-            overlay.id = 'vocabmaster-reset-modal';
-            overlay.style.position = 'fixed';
-            overlay.style.left = '0';
-            overlay.style.top = '0';
-            overlay.style.width = '100%';
-            overlay.style.height = '100%';
-            overlay.style.background = 'rgba(0,0,0,0.4)';
-            overlay.style.display = 'flex';
-            overlay.style.alignItems = 'center';
-            overlay.style.justifyContent = 'center';
-            overlay.style.zIndex = '9999';
-
-            const dialog = document.createElement('div');
-            dialog.style.background = '#fff';
-            dialog.style.padding = '18px';
-            dialog.style.borderRadius = '8px';
-            dialog.style.maxWidth = '480px';
-            dialog.style.boxShadow = '0 6px 24px rgba(0,0,0,0.2)';
-            dialog.style.textAlign = 'left';
-
-            const title = document.createElement('h3');
-            title.textContent = 'Confirm Reset Progress';
-            dialog.appendChild(title);
-
-            const msg = document.createElement('p');
-            msg.textContent = 'This will clear all locally-stored progress for this user. This action cannot be undone. Are you sure you want to continue?';
-            dialog.appendChild(msg);
-
-            const controls = document.createElement('div');
-            controls.style.display = 'flex';
-            controls.style.justifyContent = 'flex-end';
-            controls.style.gap = '8px';
-            controls.style.marginTop = '12px';
-
-            const cancelBtn = document.createElement('button');
-            cancelBtn.textContent = 'Cancel';
-            cancelBtn.onclick = () => { overlay.remove(); };
-
-            const confirmBtn = document.createElement('button');
-            confirmBtn.textContent = 'Reset';
-            confirmBtn.style.background = '#c0392b';
-            confirmBtn.style.color = '#fff';
-            confirmBtn.style.border = 'none';
-            confirmBtn.style.padding = '8px 12px';
-            confirmBtn.style.borderRadius = '4px';
-            confirmBtn.onclick = async () => {
-                confirmBtn.disabled = true;
-                try {
-                    const res = await this.resetAllProgress();
-                    if (res && res.reset) this.showToast('Progress reset'); else this.showToast('Reset failed');
-                } catch (e) {
-                    console.warn('Error during resetAllProgress from modal', e);
-                    this.showToast('Reset failed');
-                } finally {
-                    overlay.remove();
-                    this.renderUI();
-                }
-            };
-
-            controls.appendChild(cancelBtn);
-            controls.appendChild(confirmBtn);
-            dialog.appendChild(controls);
-
-            overlay.appendChild(dialog);
-            document.body.appendChild(overlay);
-        } catch (e) {
-            console.warn('showResetConfirmation failed', e);
-            // Fallback to simple confirm
-            if (window.confirm && window.confirm('Reset all progress for this user? This cannot be undone.')) {
-                this.resetAllProgress().then(r => { if (r && r.reset) this.showToast('Progress reset'); else this.showToast('Reset failed'); this.renderUI(); }).catch(() => { this.showToast('Reset failed'); });
-            } else {
-                this.showToast('Reset cancelled');
-            }
-        }
+        // Reset UI removed: keep a safe no-op to avoid errors from any lingering calls.
+        try { this.showToast('Reset progress feature is disabled in this build.'); } catch (e) { /* noop */ }
     }
 }
 
