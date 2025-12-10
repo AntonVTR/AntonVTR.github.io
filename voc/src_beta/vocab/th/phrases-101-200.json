@@ -1,0 +1,1465 @@
+{
+    "id": "th-phrases-101-200",
+    "name": "Thai Phrases 101-200 (sample)",
+    "language": "th",
+    "metadata": {
+        "source": "generated-sample",
+        "notes": "Second 10 sample entries for review"
+    },
+    "words": [
+        {
+            "id": "th-p101",
+            "target": "ฉันหิว",
+            "transliteration": "chan hiw",
+            "native": "I'm hungry",
+            "examples": [
+                "ฉันหิวมาก",
+                "I'm very hungry"
+            ],
+            "tags": [
+                "food"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p102",
+            "target": "ฉันหิวข้าว",
+            "transliteration": "chan hiw khao",
+            "native": "I'm hungry (for rice/meal)",
+            "examples": [
+                "ไปกินข้าวกันไหม?",
+                "Shall we eat?"
+            ],
+            "tags": [
+                "food"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p104",
+            "target": "ราคาเท่าไหร่",
+            "transliteration": "rakha thao-rai",
+            "native": "how much is it?",
+            "examples": [
+                "อันนี้ราคาเท่าไหร่?",
+                "How much is this?"
+            ],
+            "tags": [
+                "shopping"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p105",
+            "target": "ช่วยฉันด้วย",
+            "transliteration": "chuay chan duay",
+            "native": "please help me",
+            "examples": [
+                "ช่วยฉันด้วย ฉันถูกขโมย",
+                "Please help me, I was robbed"
+            ],
+            "tags": [
+                "emergency"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p106",
+            "target": "ห้องน้ำอยู่ที่ไหน",
+            "transliteration": "hong-nam yu thi nai",
+            "native": "where is the bathroom?",
+            "examples": [
+                "ขอโทษ ห้องน้ำอยู่ที่ไหน",
+                "Excuse me, where is the bathroom?"
+            ],
+            "tags": [
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p107",
+            "target": "ฉันชอบมัน",
+            "transliteration": "chan chop man",
+            "native": "I like it",
+            "examples": [
+                "ฉันชอบอาหารจานนี้",
+                "I like this dish"
+            ],
+            "tags": [
+                "opinion"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p109",
+            "target": "ช้าๆ",
+            "transliteration": "cha-cha",
+            "native": "slowly",
+            "examples": [
+                "ขับรถช้าๆ",
+                "Drive slowly"
+            ],
+            "tags": [
+                "adverb"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p110",
+            "target": "เร็วๆ",
+            "transliteration": "reo-reo",
+            "native": "quickly",
+            "examples": [
+                "มาทางนี้เร็วๆ",
+                "Come here quickly"
+            ],
+            "tags": [
+                "adverb"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p111",
+            "target": "ฉันต้องการตั๋วไปกรุงเทพฯ",
+            "transliteration": "chan tong-gan tua pai grung-thep",
+            "native": "I need a ticket to Bangkok",
+            "examples": [
+                "ฉันต้องการตั๋วไปกรุงเทพฯ วันพรุ่งนี้",
+                "I need a ticket to Bangkok for tomorrow"
+            ],
+            "tags": [
+                "travel",
+                "transport"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p112",
+            "target": "ร้านอาหารแนะนำอยู่ที่ไหน",
+            "transliteration": "ran aa-han nae-num yoo thi nai",
+            "native": "Where is a recommended restaurant?",
+            "examples": [
+                "คุณช่วยบอกร้านอาหารแนะนำใกล้ๆ ได้ไหม",
+                "Can you tell me a recommended restaurant nearby?"
+            ],
+            "tags": [
+                "food",
+                "recommendation"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p113",
+            "target": "ฉันแพ้ถั่ว",
+            "transliteration": "chan pae thua",
+            "native": "I'm allergic to nuts",
+            "examples": [
+                "ช่วยระวังด้วย ฉันแพ้ถั่ว",
+                "Please be careful — I'm allergic to nuts"
+            ],
+            "tags": [
+                "health",
+                "food"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p114",
+            "target": "คิดเงินด้วยครับ/ค่ะ",
+            "transliteration": "khit ngoen duay krap/ka",
+            "native": "Check please",
+            "examples": [
+                "ขอโต๊ะสองคน คิดเงินด้วยครับ",
+                "We have a table for two — check please"
+            ],
+            "tags": [
+                "restaurant",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p115",
+            "target": "ช่วยเรียกรถพยาบาลด้วย",
+            "transliteration": "chuay riak rot pha-ya-baan duay",
+            "native": "Please call an ambulance",
+            "examples": [
+                "มีคนหมดสติ ช่วยเรียกรถพยาบาลด้วย",
+                "Someone passed out — please call an ambulance"
+            ],
+            "tags": [
+                "emergency"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p116",
+            "target": "ห้องนี้มีแอร์ไหม",
+            "transliteration": "hong nee mee air mai",
+            "native": "Does this room have air conditioning?",
+            "examples": [
+                "ห้องพักนี้มีแอร์ไหม และมีค่าไฟรวมไหม",
+                "Does this room have AC, and is electricity included?"
+            ],
+            "tags": [
+                "accommodation",
+                "question"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p117",
+            "target": "ฉันต้องการน้ำเปล่า",
+            "transliteration": "chan tong-gan nam plao",
+            "native": "I would like some drinking water",
+            "examples": [
+                "ขอน้ำเปล่า 1 ขวด ได้ไหม",
+                "May I have one bottle of water?"
+            ],
+            "tags": [
+                "food",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p118",
+            "target": "จะไปที่นี่ได้อย่างไร",
+            "transliteration": "ja pai thi nee dai yang ngai",
+            "native": "How can I get to this place?",
+            "examples": [
+                "ผมจะไปสนามบินได้อย่างไร",
+                "How can I get to the airport?"
+            ],
+            "tags": [
+                "directions",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p119",
+            "target": "คุณพูดภาษาอังกฤษได้ไหม",
+            "transliteration": "khun phut phasa ang-grit dai mai",
+            "native": "Do you speak English?",
+            "examples": [
+                "คุณพูดภาษาอังกฤษได้ไหม ช่วยแนะนำที",
+                "Do you speak English? Please advise"
+            ],
+            "tags": [
+                "communication"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p120",
+            "target": "เปิด/ปิด ไฟได้ไหม",
+            "transliteration": "pert/pit fai dai mai",
+            "native": "Can you turn the light on/off?",
+            "examples": [
+                "หนาว ช่วยเปิดไฟให้หน่อย",
+                "I'm cold — can you turn the light on?"
+            ],
+            "tags": [
+                "household",
+                "request"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p121",
+            "target": "คุณช่วยถ่ายรูปให้หน่อยได้ไหม",
+            "transliteration": "khun chuay thai ruup hai noi dai mai",
+            "native": "Could you take a photo for me?",
+            "examples": [
+                "ช่วยถ่ายรูปให้หน่อยได้ไหม เราต้องการรูปคู่",
+                "Could you take a photo of us together?"
+            ],
+            "tags": [
+                "politeness",
+                "social"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p122",
+            "target": "ฉันชอบอาหารไทย",
+            "transliteration": "chan chop aa-han thai",
+            "native": "I like Thai food",
+            "examples": [
+                "ฉันชอบอาหารไทย โดยเฉพาะต้มยำ",
+                "I like Thai food, especially tom yum"
+            ],
+            "tags": [
+                "food",
+                "opinion"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p123",
+            "target": "ขอเมนูหน่อย",
+            "transliteration": "kho menu noi",
+            "native": "May I have the menu, please?",
+            "examples": [
+                "ขอเมนูหน่อยค่ะ",
+                "May I see the menu, please?"
+            ],
+            "tags": [
+                "restaurant",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p124",
+            "target": "ฉันจะกลับบ้านแล้ว",
+            "transliteration": "chan ja klap baan laew",
+            "native": "I'm going home now",
+            "examples": [
+                "ฉันจะกลับบ้านแล้ว เจอกันพรุ่งนี้",
+                "I'm going home now — see you tomorrow"
+            ],
+            "tags": [
+                "farewell"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p125",
+            "target": "ช่วยลดราคาได้ไหม",
+            "transliteration": "chuay lot rakha dai mai",
+            "native": "Can you reduce the price?",
+            "examples": [
+                "ราคานี้ได้ไหม ช่วยลดราคาได้ไหม",
+                "That's expensive — can you lower the price?"
+            ],
+            "tags": [
+                "shopping",
+                "bargaining"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p126",
+            "target": "ฉันต้องการปลั๊กสำหรับชาร์จ",
+            "transliteration": "chan tong-gan pluk sam-rap charj",
+            "native": "I need a charger plug",
+            "examples": [
+                "ฉันต้องการปลั๊กสำหรับชาร์จโทรศัพท์",
+                "I need a charger for my phone"
+            ],
+            "tags": [
+                "shopping",
+                "electronics"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p127",
+            "target": "วันนี้อากาศดี",
+            "transliteration": "wan nee aa-gat dee",
+            "native": "The weather is nice today",
+            "examples": [
+                "วันนี้อากาศดี เราไปเดินเล่นกันไหม",
+                "The weather is nice — shall we go for a walk?"
+            ],
+            "tags": [
+                "smalltalk",
+                "weather"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p128",
+            "target": "คุณช่วยบอกทางไปวัดได้ไหม",
+            "transliteration": "khun chuay bok thang pai wat dai mai",
+            "native": "Can you tell me the way to the temple?",
+            "examples": [
+                "ขอโทษ คุณช่วยบอกทางไปวัดพระแก้วได้ไหม",
+                "Excuse me, can you tell me how to get to the Royal Temple?"
+            ],
+            "tags": [
+                "directions",
+                "culture"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p129",
+            "target": "ฉันไม่กินเนื้อสัตว์",
+            "transliteration": "chan mai kin nuea sat",
+            "native": "I don't eat meat",
+            "examples": [
+                "ฉันไม่กินเนื้อสัตว์ ช่วยแนะนำเมนูผักได้ไหม",
+                "I don't eat meat — can you recommend a vegetarian dish?"
+            ],
+            "tags": [
+                "food",
+                "dietary"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p130",
+            "target": "ฉันจะกลับมาพรุ่งนี้",
+            "transliteration": "chan ja klap ma phrung-nii",
+            "native": "I'll come back tomorrow",
+            "examples": [
+                "ขอบคุณมาก — ฉันจะกลับมาพรุ่งนี้",
+                "Thank you — I'll come back tomorrow"
+            ],
+            "tags": [
+                "travel",
+                "plan"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p131",
+            "target": "ทางนี้ปลอดภัยไหม",
+            "transliteration": "thang nee plot-phai mai",
+            "native": "Is this area safe?",
+            "examples": [
+                "เมื่อคืนฉันเห็นข่าว เหตุการณ์เกิดขึ้นที่นี่ ทางนี้ปลอดภัยไหม",
+                "I saw news about an incident here last night — is this area safe?"
+            ],
+            "tags": [
+                "safety",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p132",
+            "target": "ช่วยชี้เมนูแนะนำหน่อย",
+            "transliteration": "chuay chii menu nae-num noi",
+            "native": "Please point out a recommended menu item",
+            "examples": [
+                "ฉันไม่แน่ใจ ช่วยชี้เมนูแนะนำหน่อย",
+                "I'm not sure — please point me to something recommended"
+            ],
+            "tags": [
+                "food",
+                "recommendation"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p133",
+            "target": "ฉันต้องการนัดพบแพทย์",
+            "transliteration": "chan tong-gan nat phop phaet",
+            "native": "I need to make a doctor's appointment",
+            "examples": [
+                "ฉันต้องการนัดพบแพทย์เพราะปวดท้อง",
+                "I need a doctor's appointment because of stomach pain"
+            ],
+            "tags": [
+                "health",
+                "appointment"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p134",
+            "target": "กรุณาพูดช้าๆ",
+            "transliteration": "karuna phut cha-cha",
+            "native": "Please speak slowly",
+            "examples": [
+                "ฉันเพิ่งเริ่มเรียน กรุณาพูดช้าๆ",
+                "I'm just starting to learn — please speak slowly"
+            ],
+            "tags": [
+                "communication",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p135",
+            "target": "ฉันต้องการซิมการ์ดสำหรับอินเทอร์เน็ต",
+            "transliteration": "chan tong-gan sim card sam-rap internet",
+            "native": "I need a SIM card for internet",
+            "examples": [
+                "ขายซิมการ์ดแบบไหนที่ใช้ได้ทั้งประเทศ?",
+                "What SIM cards work nationwide?"
+            ],
+            "tags": [
+                "shopping",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p136",
+            "target": "ฉันจะจ่ายด้วยบัตรเครดิตได้ไหม",
+            "transliteration": "chan ja jai duay bat kredit dai mai",
+            "native": "Can I pay by credit card?",
+            "examples": [
+                "จ่ายด้วยบัตรเครดิตได้ไหม หรือรับเงินสดเท่านั้น",
+                "Can I pay by card or is it cash only?"
+            ],
+            "tags": [
+                "shopping",
+                "payment"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p137",
+            "target": "ฉันหลงทาง",
+            "transliteration": "chan long thang",
+            "native": "I'm lost",
+            "examples": [
+                "ฉันหลงทาง ช่วยบอกทางกลับโรงแรมหน่อย",
+                "I'm lost — please tell me how to get back to the hotel"
+            ],
+            "tags": [
+                "emergency",
+                "directions"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p138",
+            "target": "ขอใบเสร็จด้วย",
+            "transliteration": "kho bai set duay",
+            "native": "Please give me the receipt",
+            "examples": [
+                "ขอใบเสร็จด้วยค่ะ สำหรับคืนภาษี",
+                "Please give me the receipt for tax refund"
+            ],
+            "tags": [
+                "shopping",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p139",
+            "target": "ฉันเป็นมังสวิรัติ",
+            "transliteration": "chan pen mang-sa-wi-rat",
+            "native": "I'm a vegetarian",
+            "examples": [
+                "ฉันเป็นมังสวิรัติ กรุณาแนะนำเมนูที่ไม่มีเนื้อสัตว์",
+                "I'm vegetarian — please recommend meat-free dishes"
+            ],
+            "tags": [
+                "food",
+                "dietary"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p140",
+            "target": "ฉันชอบฟังเพลงไทย",
+            "transliteration": "chan chop fang pleng thai",
+            "native": "I like listening to Thai music",
+            "examples": [
+                "ฉันชอบฟังเพลงไทยแนวลูกทุ่ง",
+                "I enjoy listening to Thai folk music"
+            ],
+            "tags": [
+                "culture",
+                "hobby"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p141",
+            "target": "มีบริการรับส่งสนามบินไหม",
+            "transliteration": "mee bor-ri-kaan rap-song sa-nam-bin mai",
+            "native": "Is airport transfer available?",
+            "examples": [
+                "โรงแรมนี้มีบริการรับส่งสนามบินไหม",
+                "Does this hotel provide airport transfer?"
+            ],
+            "tags": [
+                "travel",
+                "accommodation"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p142",
+            "target": "ฉันต้องการน้ำตาลน้อย",
+            "transliteration": "chan tong-gan nam-dtaan noi",
+            "native": "I want less sugar",
+            "examples": [
+                "กรุณาใส่น้ำตาลน้อยในชาเย็น",
+                "Please put less sugar in the iced tea"
+            ],
+            "tags": [
+                "food",
+                "preference"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p143",
+            "target": "ฉันมีการนัดเวลา",
+            "transliteration": "chan mee gaan nat way-la",
+            "native": "I have an appointment",
+            "examples": [
+                "ขอโทษ ฉันมีการนัดเวลาแล้ว",
+                "Sorry, I already have an appointment"
+            ],
+            "tags": [
+                "schedule",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p144",
+            "target": "ช่วยบอกเวลาทำการ",
+            "transliteration": "chuay bok way-la tham-gaan",
+            "native": "Please tell me opening hours",
+            "examples": [
+                "ร้านนี้เปิดกี่โมง ช่วยบอกเวลาทำการด้วย",
+                "What time does this shop open? Please tell me the hours"
+            ],
+            "tags": [
+                "shopping",
+                "question"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p145",
+            "target": "ฉันปวดหัว",
+            "transliteration": "chan puad hua",
+            "native": "I have a headache",
+            "examples": [
+                "ฉันปวดหัวมาก ต้องการยาแก้ปวด",
+                "I have a bad headache — I need painkillers"
+            ],
+            "tags": [
+                "health"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p146",
+            "target": "ช่วยชำระเงินออนไลน์ได้ไหม",
+            "transliteration": "chuay cham-ra ngoen online dai mai",
+            "native": "Can I pay online?",
+            "examples": [
+                "ฉันต้องการชำระเงินออนไลน์ด้วยบัตรเครดิต",
+                "I'd like to pay online with a credit card"
+            ],
+            "tags": [
+                "payment",
+                "shopping"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p147",
+            "target": "ห้ามสูบบุหรี่ที่นี่",
+            "transliteration": "ham sup bu-ree tee nee",
+            "native": "No smoking here",
+            "examples": [
+                "โปรดทราบว่าห้ามสูบบุหรี่ภายในอาคาร",
+                "Please note smoking is prohibited inside the building"
+            ],
+            "tags": [
+                "rules",
+                "safety"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p148",
+            "target": "ฉันต้องการติดต่อครอบครัว",
+            "transliteration": "chan tong-gan tit-taw krop-krua",
+            "native": "I need to contact my family",
+            "examples": [
+                "ช่วยบอกเบอร์โทรศัพท์ฉันด้วย ฉันต้องการติดต่อครอบครัว",
+                "Please give me the phone number — I need to contact my family"
+            ],
+            "tags": [
+                "communication",
+                "emergency"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p149",
+            "target": "ทางไปสถานีรถไฟอยู่ที่ไหน",
+            "transliteration": "thang pai sa-tha-nee rot-fai yu thi nai",
+            "native": "How do I get to the train station?",
+            "examples": [
+                "ขอโทษ ทางไปสถานีรถไฟอยู่ที่ไหน",
+                "Excuse me, how do I get to the train station?"
+            ],
+            "tags": [
+                "directions",
+                "transport"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p150",
+            "target": "มีห้องว่างสำหรับคืนนี้ไหม",
+            "transliteration": "mee hong waang sam-rap kuen nee mai",
+            "native": "Is there a room available for tonight?",
+            "examples": [
+                "เราต้องการห้องพัก 1 ห้องสำหรับคืนนี้ มีห้องว่างไหม",
+                "We need one room for tonight — do you have availability?"
+            ],
+            "tags": [
+                "accommodation",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p151",
+            "target": "ฉันต้องการแผนที่",
+            "transliteration": "chan tong-gan phaen-tee",
+            "native": "I need a map",
+            "examples": [
+                "ช่วยให้แผนที่เมืองนี้ได้ไหม ฉันต้องการแผนที่",
+                "Could you provide a map of the city? I need a map"
+            ],
+            "tags": [
+                "travel",
+                "directions"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p152",
+            "target": "ช่วยเรียกแท็กซี่ให้หน่อย",
+            "transliteration": "chuay riak taxi hai noi",
+            "native": "Please call a taxi for me",
+            "examples": [
+                "ช่วยเรียกแท็กซี่ไปสนามบินให้หน่อย",
+                "Please call a taxi to the airport"
+            ],
+            "tags": [
+                "transport",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p153",
+            "target": "ฉันต้องการแลกเงิน",
+            "transliteration": "chan tong-gan laek ngoen",
+            "native": "I need to exchange money",
+            "examples": [
+                "มีที่แลกเงินใกล้ๆ ไหม ฉันต้องการแลกเงินดอลลาร์",
+                "Is there a currency exchange nearby? I need to exchange dollars"
+            ],
+            "tags": [
+                "money",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p154",
+            "target": "เมนูวันนี้มีอะไรแนะนำ",
+            "transliteration": "menu wan nee mee arai nae-num",
+            "native": "What's recommended on today's menu?",
+            "examples": [
+                "เมนูวันนี้มีอะไรที่คุณแนะนำเป็นพิเศษ",
+                "What's special on today's menu?"
+            ],
+            "tags": [
+                "food",
+                "restaurant"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p155",
+            "target": "ฉันอยากไปตลาด",
+            "transliteration": "chan yak pai talaad",
+            "native": "I want to go to the market",
+            "examples": [
+                "พรุ่งนี้ฉันอยากไปตลาดเช้า",
+                "Tomorrow I'd like to go to the morning market"
+            ],
+            "tags": [
+                "shopping",
+                "culture"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p156",
+            "target": "ขอห้องน้ำที่ใกล้ที่สุด",
+            "transliteration": "kho hong-nam thi glai thee sut",
+            "native": "Where is the nearest restroom?",
+            "examples": [
+                "ขอโทษ ขอห้องน้ำที่ใกล้ที่สุดได้ไหม",
+                "Excuse me — where is the nearest restroom?"
+            ],
+            "tags": [
+                "travel",
+                "basic"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p157",
+            "target": "ฉันต้องการจองโต๊ะ",
+            "transliteration": "chan tong-gan jong toa",
+            "native": "I want to reserve a table",
+            "examples": [
+                "ฉันต้องการจองโต๊ะสำหรับสี่คนคืนนี้",
+                "I'd like to reserve a table for four tonight"
+            ],
+            "tags": [
+                "restaurant",
+                "booking"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p158",
+            "target": "ช่วยบอกชื่อสถานที่นี้",
+            "transliteration": "chuay bok chue sa-than-tee nee",
+            "native": "Please tell me the name of this place",
+            "examples": [
+                "ฉันไม่แน่ใจว่าที่นี่เรียกว่าอะไร ช่วยบอกชื่อสถานที่นี้",
+                "I'm not sure what this place is called — please tell me the name"
+            ],
+            "tags": [
+                "travel",
+                "communication"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p159",
+            "target": "ฉันต้องการใช้วIFI",
+            "transliteration": "chan tong-gan chai Wi-Fi",
+            "native": "I need to use Wi-Fi",
+            "examples": [
+                "รหัส Wi-Fi คืออะไร ฉันต้องการใช้ Wi-Fi",
+                "What's the Wi-Fi password? I need to use Wi-Fi"
+            ],
+            "tags": [
+                "communication",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p160",
+            "target": "ช่วยโทรศัพท์ให้ฉันหน่อย",
+            "transliteration": "chuay tho-ra-sap hai chan noi",
+            "native": "Please call a phone for me",
+            "examples": [
+                "ฉันไม่มีซิม ช่วยโทรศัพท์ให้ฉันหน่อยได้ไหม",
+                "I don't have a SIM — could you make a call for me?"
+            ],
+            "tags": [
+                "communication",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p161",
+            "target": "ฉันต้องการยากันยุง",
+            "transliteration": "chan tong-gan ya gan yung",
+            "native": "I need mosquito repellent",
+            "examples": [
+                "ที่นี่มียุงเยอะ ช่วยหายากันยุงให้หน่อย",
+                "There are many mosquitoes here — please find mosquito repellent"
+            ],
+            "tags": [
+                "health",
+                "shopping"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p162",
+            "target": "ฉันชอบเดินชมเมือง",
+            "transliteration": "chan chop dern chom muang",
+            "native": "I like strolling around the city",
+            "examples": [
+                "ชอบเดินชมเมืองเก่าและถ่ายรูป",
+                "I enjoy strolling around the old town and taking photos"
+            ],
+            "tags": [
+                "culture",
+                "hobby"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p163",
+            "target": "โปรดระวังของมีคม",
+            "transliteration": "prod ra-wang kong mee kom",
+            "native": "Please watch out for sharp objects",
+            "examples": [
+                "ระวังมีของมีคมบนพื้น",
+                "Watch out — there are sharp objects on the floor"
+            ],
+            "tags": [
+                "safety"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p164",
+            "target": "ฉันต้องการยืมผ้าเช็ดหน้า",
+            "transliteration": "chan tong-gan yeum pha chet na",
+            "native": "I need to borrow a towel",
+            "examples": [
+                "กรุณายืมผ้าเช็ดหน้าให้ฉันได้ไหม",
+                "Could I borrow a towel, please?"
+            ],
+            "tags": [
+                "accommodation",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p165",
+            "target": "ฉันมาเที่ยวคนเดียว",
+            "transliteration": "chan ma thiao khon diao",
+            "native": "I'm traveling alone",
+            "examples": [
+                "ฉันมาเที่ยวคนเดียวและอยากพบเพื่อนใหม่",
+                "I'm traveling alone and would like to meet new people"
+            ],
+            "tags": [
+                "travel",
+                "social"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p166",
+            "target": "ช่วยทำความสะอาดห้องให้หน่อย",
+            "transliteration": "chuay tham khwam sa-at hong hai noi",
+            "native": "Please clean the room",
+            "examples": [
+                "อยู่ต่ออีกสองคืน ช่วยทำความสะอาดห้องให้หน่อย",
+                "We're staying two more nights — please clean the room"
+            ],
+            "tags": [
+                "accommodation",
+                "service"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p167",
+            "target": "ตอนนี้กี่โมงแล้ว",
+            "transliteration": "ton nee gee mong laew",
+            "native": "What time is it now?",
+            "examples": [
+                "ขอโทษ ตอนนี้กี่โมงแล้ว",
+                "Excuse me — what time is it now?"
+            ],
+            "tags": [
+                "basic",
+                "time"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p168",
+            "target": "ฉันต้องการแพทย์แผนปัจจุบัน",
+            "transliteration": "chan tong-gan phaet phaen pat-chu-ban",
+            "native": "I need modern medical care",
+            "examples": [
+                "ฉันต้องการพบแพทย์แผนปัจจุบันโดยด่วน",
+                "I need to see a modern physician urgently"
+            ],
+            "tags": [
+                "health",
+                "emergency"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p169",
+            "target": "ขอแผนที่รถเมล์",
+            "transliteration": "kho phaen-tee rot-mae",
+            "native": "May I have a bus map?",
+            "examples": [
+                "ที่นี่มีแผนที่รถเมล์หรือไม่ ขอแผนที่รถเมล์",
+                "Do you have a bus map? May I have one?"
+            ],
+            "tags": [
+                "transport",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p170",
+            "target": "ช่วยบอกทางไปโรงพยาบาล",
+            "transliteration": "chuay bok thang pai rong pha-ya-baan",
+            "native": "Please tell me the way to the hospital",
+            "examples": [
+                "ฉันต้องการไปโรงพยาบาลอย่างเร่งด่วน ช่วยบอกทางด้วย",
+                "I need to go to the hospital urgently — please tell me the way"
+            ],
+            "tags": [
+                "emergency",
+                "directions"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p171",
+            "target": "ฉันทำพาสปอร์ตหาย",
+            "transliteration": "chan tham passport hai",
+            "native": "I lost my passport",
+            "examples": [
+                "ฉันทำพาสปอร์ตหาย ช่วยบอกว่าต้องไปที่ไหน",
+                "I lost my passport — please tell me where I should go"
+            ],
+            "tags": [
+                "emergency",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p172",
+            "target": "ช่วยโทรแจ้งตำรวจ",
+            "transliteration": "chuay thoh jak tam-ruat",
+            "native": "Please call the police",
+            "examples": [
+                "มีคนขโมยกระเป๋า ช่วยโทรแจ้งตำรวจด้วย",
+                "Someone stole a bag — please call the police"
+            ],
+            "tags": [
+                "emergency"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p173",
+            "target": "ค่าแท็กซี่ประมาณเท่าไหร่",
+            "transliteration": "kha taxi bpra-maan thao-rai",
+            "native": "How much is the taxi fare approximately?",
+            "examples": [
+                "จากที่นี่ไปสนามบิน ค่าแท็กซี่ประมาณเท่าไหร่",
+                "How much is a taxi from here to the airport?"
+            ],
+            "tags": [
+                "transport",
+                "money"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p174",
+            "target": "ชำระผ่านบัตรหรือไม่",
+            "transliteration": "cham-ra phaan bat rue mai",
+            "native": "Do you accept card payment?",
+            "examples": [
+                "ร้านนี้ชำระผ่านบัตรเครดิตหรือไม่",
+                "Does this shop accept credit card?"
+            ],
+            "tags": [
+                "payment",
+                "shopping"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p175",
+            "target": "ผมต้องการแพทย์",
+            "transliteration": "phom tong-gan phaet",
+            "native": "I need a doctor (male speaker)",
+            "examples": [
+                "ผมป่วยมาก ผมต้องการแพทย์ทันที",
+                "I'm very sick — I need a doctor immediately"
+            ],
+            "tags": [
+                "health",
+                "emergency"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p176",
+            "target": "ฉันต้องการไปท่าเรือ",
+            "transliteration": "chan tong-gan pai tha-ruea",
+            "native": "I need to go to the pier/port",
+            "examples": [
+                "ช่วยบอกทางไปท่าเรือที่ใกล้ที่สุด",
+                "Please tell me the way to the nearest pier"
+            ],
+            "tags": [
+                "travel",
+                "transport"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p177",
+            "target": "ช่วยชั่งน้ำหนักกระเป๋า",
+            "transliteration": "chuay chang nam-nak kra-pao",
+            "native": "Please weigh my luggage",
+            "examples": [
+                "พรุ่งนี้ต้องเช็คอิน ช่วยชั่งน้ำหนักกระเป๋าให้หน่อย",
+                "I need to check in tomorrow — please weigh my luggage"
+            ],
+            "tags": [
+                "travel",
+                "airport"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p178",
+            "target": "มีตู้เอทีเอ็มใกล้ๆ ไหม",
+            "transliteration": "mee tu ATM glai-glai mai",
+            "native": "Is there an ATM nearby?",
+            "examples": [
+                "ฉันต้องการถอนเงิน มีตู้เอทีเอ็มใกล้ๆ ไหม",
+                "I need to withdraw cash — is there an ATM nearby?"
+            ],
+            "tags": [
+                "money",
+                "travel"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p179",
+            "target": "ขอเวลาคิดหน่อย",
+            "transliteration": "kho way-la khit noi",
+            "native": "May I have a moment to think?",
+            "examples": [
+                "ฉันยังไม่แน่ใจ ขอเวลาคิดหน่อย",
+                "I'm not sure yet — may I have a moment to think?"
+            ],
+            "tags": [
+                "politeness",
+                "shopping"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p180",
+            "target": "คุณช่วยหาผ้าห่มไหม",
+            "transliteration": "khun chuay haa pha-hom mai",
+            "native": "Can you find a blanket?",
+            "examples": [
+                "คืนนี้หนาว ช่วยหาผ้าห่มให้หน่อย",
+                "It's cold tonight — can you bring a blanket?"
+            ],
+            "tags": [
+                "accommodation",
+                "service"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p181",
+            "target": "ฉันแพ้อาหารทะเล",
+            "transliteration": "chan pae aa-han tha-le",
+            "native": "I'm allergic to seafood",
+            "examples": [
+                "ช่วยบอกเชฟว่าฉันแพ้อาหารทะเล",
+                "Please tell the chef I'm allergic to seafood"
+            ],
+            "tags": [
+                "health",
+                "food"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p182",
+            "target": "ขอเป็นห้องสูบบุหรี่/ไม่สูบบุหรี่",
+            "transliteration": "kho pen hong sup bu-ree / mai sup bu-ree",
+            "native": "May I have a smoking/non-smoking room?",
+            "examples": [
+                "จองห้องสำหรับสองคน ขอเป็นห้องไม่สูบบุหรี่",
+                "We booked for two — please give a non-smoking room"
+            ],
+            "tags": [
+                "accommodation",
+                "preference"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p183",
+            "target": "ฉันจะไปทัวร์วันนี้",
+            "transliteration": "chan ja pai tour wan nee",
+            "native": "I'm going on a tour today",
+            "examples": [
+                "ฉันได้จองทัวร์แล้ว ฉันจะไปทัวร์วันนี้",
+                "I booked a tour — I'm going today"
+            ],
+            "tags": [
+                "travel",
+                "tour"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p184",
+            "target": "ช่วยเก็บของให้หน่อย",
+            "transliteration": "chuay kep kong hai noi",
+            "native": "Please store my belongings",
+            "examples": [
+                "ฉันต้องเช็คเอาท์ แต่กลับมาเย็นนี้ ช่วยเก็บของให้หน่อย",
+                "I need to check out but come back tonight — please store my luggage"
+            ],
+            "tags": [
+                "service",
+                "accommodation"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p185",
+            "target": "ทางนี้เลี้ยวซ้าย/ขวา",
+            "transliteration": "thang nee liao sai / khwa",
+            "native": "Turn left/right here",
+            "examples": [
+                "พอถึงสี่แยก เลี้ยวซ้ายไปตามทาง",
+                "When you reach the intersection, turn left"
+            ],
+            "tags": [
+                "directions"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p186",
+            "target": "ตั๋วรถไฟไปเชียงใหม่",
+            "transliteration": "tua rot-fai pai Chiang Mai",
+            "native": "Train ticket to Chiang Mai",
+            "examples": [
+                "ฉันต้องการตั๋วรถไฟไปเชียงใหม่ วันเสาร์",
+                "I need a train ticket to Chiang Mai for Saturday"
+            ],
+            "tags": [
+                "travel",
+                "ticket"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p187",
+            "target": "ชั้นสองอยู่ตรงไหน",
+            "transliteration": "chan song yu trong nai",
+            "native": "Where is the second floor?",
+            "examples": [
+                "ร้านนี้มีสองชั้น ชั้นสองอยู่ตรงไหน",
+                "This shop has two floors — where is the second floor?"
+            ],
+            "tags": [
+                "directions",
+                "building"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p188",
+            "target": "ขอถามราคาอีกครั้ง",
+            "transliteration": "kho tham rakha eek krang",
+            "native": "May I ask the price again?",
+            "examples": [
+                "ขอถามราคาอีกครั้งได้ไหม ฉันฟังไม่ทัน",
+                "Could you repeat the price? I didn't catch it"
+            ],
+            "tags": [
+                "shopping",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p189",
+            "target": "ฉันต้องการบัตรเข้าพิพิธภัณฑ์",
+            "transliteration": "chan tong-gan bat khao phi-pit-pa-than",
+            "native": "I want a ticket for the museum",
+            "examples": [
+                "ฉันต้องการบัตรเข้าพิพิธภัณฑ์ผู้ใหญ่หนึ่งใบ",
+                "I need one adult museum ticket"
+            ],
+            "tags": [
+                "culture",
+                "ticket"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p190",
+            "target": "มีห้องสำหรับสูบบุหรี่ไหม",
+            "transliteration": "mee hong sam-rap sup bu-ree mai",
+            "native": "Is there a smoking room?",
+            "examples": [
+                "ฉันเป็นผู้สูบบุหรี่ ต้องการห้องสำหรับสูบบุหรี่",
+                "I'm a smoker — is there a smoking room?"
+            ],
+            "tags": [
+                "accommodation",
+                "preference"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p191",
+            "target": "ฉันต้องการเช่าจักรยาน",
+            "transliteration": "chan tong-gan chao jak-gra-yan",
+            "native": "I want to rent a bicycle",
+            "examples": [
+                "มีที่เช่าจักรยานใกล้ๆ ไหม ฉันต้องการเช่าวันละหนึ่งคัน",
+                "Is there a bike rental nearby? I want to rent one per day"
+            ],
+            "tags": [
+                "travel",
+                "activity"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p192",
+            "target": "โปรดอย่าใช้เสียงดัง",
+            "transliteration": "prod ya chai siang dang",
+            "native": "Please do not make loud noise",
+            "examples": [
+                "ห้องนี้เป็นห้องพักผ่อน โปรดอย่าใช้เสียงดัง",
+                "This is a quiet room — please do not make loud noise"
+            ],
+            "tags": [
+                "rules",
+                "politeness"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p193",
+            "target": "ฉันต้องการแผนที่เมืองเก่า",
+            "transliteration": "chan tong-gan phaen-tee muang gao",
+            "native": "I need a map of the old town",
+            "examples": [
+                "ช่วยหาข้อมูลแผนที่เมืองเก่าให้ฉัน",
+                "Please find a map of the old town for me"
+            ],
+            "tags": [
+                "travel",
+                "culture"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p194",
+            "target": "ฉันต้องการน้ำแข็ง",
+            "transliteration": "chan tong-gan nam kaeng",
+            "native": "I need ice",
+            "examples": [
+                "ขอดื่มน้ำเย็น มีน้ำแข็งไหม",
+                "May I have some ice?"
+            ],
+            "tags": [
+                "food",
+                "service"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p195",
+            "target": "ชำระที่แคชเชียร์",
+            "transliteration": "cham-ra ti khae-cheer",
+            "native": "Pay at the cashier",
+            "examples": [
+                "สินค้านี้ชำระที่แคชเชียร์นะคะ",
+                "This item is paid at the cashier"
+            ],
+            "tags": [
+                "shopping",
+                "payment"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p196",
+            "target": "ฉันจะไปตลาดกลางคืน",
+            "transliteration": "chan ja pai talaad klang khuen",
+            "native": "I'm going to the night market",
+            "examples": [
+                "คืนนี้เราไปตลาดกลางคืนกันไหม",
+                "Shall we go to the night market tonight?"
+            ],
+            "tags": [
+                "shopping",
+                "culture"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p197",
+            "target": "ช่วยบอกเวลาเดินรถบัส",
+            "transliteration": "chuay bok way-la dern rot bus",
+            "native": "Please tell me the bus schedule",
+            "examples": [
+                "เราต้องการไปต่อรถบัส ช่วยบอกเวลาเดินรถบัสด้วย",
+                "We need to catch a bus — please tell us the schedule"
+            ],
+            "tags": [
+                "transport",
+                "time"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p198",
+            "target": "ฉันอยากลองอาหารถนน",
+            "transliteration": "chan yak long aa-han thanon",
+            "native": "I want to try street food",
+            "examples": [
+                "คุณแนะนำอาหารถนนที่อร่อยที่สุดได้ไหม",
+                "Can you recommend the best street food?"
+            ],
+            "tags": [
+                "food",
+                "culture"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p199",
+            "target": "คุณช่วยรอฉันสักครู่",
+            "transliteration": "khun chuay roo chan sak khru",
+            "native": "Could you wait for me a moment?",
+            "examples": [
+                "เดี๋ยวกลับมาใหม่ คุณช่วยรอฉันสักครู่",
+                "I'll be right back — please wait for me"
+            ],
+            "tags": [
+                "politeness",
+                "time"
+            ],
+            "image": ""
+        },
+        {
+            "id": "th-p200",
+            "target": "ขอบคุณสำหรับความช่วยเหลือ",
+            "transliteration": "khob khun sam-rap khwam chuay-luea",
+            "native": "Thank you for your help",
+            "examples": [
+                "ขอบคุณสำหรับความช่วยเหลือของคุณ วันนี้ฉันรู้สึกดีขึ้น",
+                "Thank you for your help — I feel better today"
+            ],
+            "tags": [
+                "politeness"
+            ],
+            "image": ""
+        }
+    ]
+}

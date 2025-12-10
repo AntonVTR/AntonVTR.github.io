@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2025-12-08T04:52:45.019301Z",
+  "summaries": {
+    "src/vocab/manifest.json": {
+      "total": 0,
+      "learning": 0
+    },
+    "vocab/manifest.json": {
+      "total": 0,
+      "learning": 0
+    },
+    "src/vocab/summaries.json": {
+      "total": 0,
+      "learning": 0
+    },
+    "vocab/summaries.json": {
+      "total": 0,
+      "learning": 0
+    },
+    "src/vocab/th/dict-500.json": {
+      "total": 499,
+      "learning": 0
+    },
+    "vocab/th/dict-500.json": {
+      "total": 499,
+      "learning": 0
+    },
+    "src/vocab/th/phrases-1-100.json": {
+      "total": 100,
+      "learning": 0
+    },
+    "vocab/th/phrases-1-100.json": {
+      "total": 100,
+      "learning": 0
+    },
+    "src/vocab/th/phrases-101-200.json": {
+      "total": 98,
+      "learning": 0
+    },
+    "vocab/th/phrases-101-200.json": {
+      "total": 98,
+      "learning": 0
+    }
+  }
+}
