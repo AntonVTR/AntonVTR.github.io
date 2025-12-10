@@ -396,10 +396,10 @@ class VocabMaster {
                 }
             }
             this.version = v || 'unknown';
-            this.versionUrl = '/CHANGELOG.md';
+            this.versionUrl = '/src/CHANGELOG.md';
         } catch (e) {
             this.version = 'unknown';
-            this.versionUrl = '/CHANGELOG.md';
+            this.versionUrl = '/src/CHANGELOG.md';
         }
     }
 
